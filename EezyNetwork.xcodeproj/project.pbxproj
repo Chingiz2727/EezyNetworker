@@ -10,6 +10,19 @@
 		A4C6E6B823E29EA3003205F7 /* EezyNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C6E6AE23E29EA3003205F7 /* EezyNetwork.framework */; };
 		A4C6E6BD23E29EA3003205F7 /* EezyNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6BC23E29EA3003205F7 /* EezyNetworkTests.swift */; };
 		A4C6E6BF23E29EA3003205F7 /* EezyNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = A4C6E6B123E29EA3003205F7 /* EezyNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C6E6CA23E29EE3003205F7 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6C923E29EE3003205F7 /* JSONEncoding.swift */; };
+		A4C6E6CC23E29F0A003205F7 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6CB23E29F0A003205F7 /* Encoding.swift */; };
+		A4C6E6CE23E29F1E003205F7 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6CD23E29F1E003205F7 /* URLEncoding.swift */; };
+		A4C6E6D223E29F3F003205F7 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6D123E29F3F003205F7 /* Errors.swift */; };
+		A4C6E6D823E29F5B003205F7 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6D423E29F5B003205F7 /* Parameter.swift */; };
+		A4C6E6D923E29F5B003205F7 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6D523E29F5B003205F7 /* HTTPTask.swift */; };
+		A4C6E6DA23E29F5B003205F7 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6D623E29F5B003205F7 /* HTTPMethods.swift */; };
+		A4C6E6DB23E29F5B003205F7 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6D723E29F5B003205F7 /* HTTPHeaders.swift */; };
+		A4C6E6E023E29F70003205F7 /* NetWorkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6DD23E29F70003205F7 /* NetWorkRouter.swift */; };
+		A4C6E6E123E29F70003205F7 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6DE23E29F70003205F7 /* Logs.swift */; };
+		A4C6E6E223E29F70003205F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6DF23E29F70003205F7 /* Router.swift */; };
+		A4C6E6E423E29F83003205F7 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6E323E29F83003205F7 /* EndPoint.swift */; };
+		A4C6E6E623E2A046003205F7 /* MakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6E6E523E2A046003205F7 /* MakeNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +42,19 @@
 		A4C6E6B723E29EA3003205F7 /* EezyNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EezyNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C6E6BC23E29EA3003205F7 /* EezyNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EezyNetworkTests.swift; sourceTree = "<group>"; };
 		A4C6E6BE23E29EA3003205F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C6E6C923E29EE3003205F7 /* JSONEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoding.swift; sourceTree = "<group>"; };
+		A4C6E6CB23E29F0A003205F7 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
+		A4C6E6CD23E29F1E003205F7 /* URLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoding.swift; sourceTree = "<group>"; };
+		A4C6E6D123E29F3F003205F7 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A4C6E6D423E29F5B003205F7 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
+		A4C6E6D523E29F5B003205F7 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		A4C6E6D623E29F5B003205F7 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		A4C6E6D723E29F5B003205F7 /* HTTPHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
+		A4C6E6DD23E29F70003205F7 /* NetWorkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkRouter.swift; sourceTree = "<group>"; };
+		A4C6E6DE23E29F70003205F7 /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		A4C6E6DF23E29F70003205F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A4C6E6E323E29F83003205F7 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		A4C6E6E523E2A046003205F7 /* MakeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +98,13 @@
 			isa = PBXGroup;
 			children = (
 				A4C6E6B123E29EA3003205F7 /* EezyNetwork.h */,
+				A4C6E6E523E2A046003205F7 /* MakeNetwork.swift */,
+				A4C6E6E323E29F83003205F7 /* EndPoint.swift */,
+				A4C6E6DC23E29F70003205F7 /* Router */,
+				A4C6E6C823E29ECB003205F7 /* Encoding */,
 				A4C6E6B223E29EA3003205F7 /* Info.plist */,
+				A4C6E6D323E29F5B003205F7 /* Service */,
+				A4C6E6D023E29F36003205F7 /* Errors */,
 			);
 			path = EezyNetwork;
 			sourceTree = "<group>";
@@ -84,6 +116,45 @@
 				A4C6E6BE23E29EA3003205F7 /* Info.plist */,
 			);
 			path = EezyNetworkTests;
+			sourceTree = "<group>";
+		};
+		A4C6E6C823E29ECB003205F7 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				A4C6E6C923E29EE3003205F7 /* JSONEncoding.swift */,
+				A4C6E6CB23E29F0A003205F7 /* Encoding.swift */,
+				A4C6E6CD23E29F1E003205F7 /* URLEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		A4C6E6D023E29F36003205F7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A4C6E6D123E29F3F003205F7 /* Errors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		A4C6E6D323E29F5B003205F7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A4C6E6D423E29F5B003205F7 /* Parameter.swift */,
+				A4C6E6D523E29F5B003205F7 /* HTTPTask.swift */,
+				A4C6E6D623E29F5B003205F7 /* HTTPMethods.swift */,
+				A4C6E6D723E29F5B003205F7 /* HTTPHeaders.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A4C6E6DC23E29F70003205F7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A4C6E6DD23E29F70003205F7 /* NetWorkRouter.swift */,
+				A4C6E6DE23E29F70003205F7 /* Logs.swift */,
+				A4C6E6DF23E29F70003205F7 /* Router.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +219,7 @@
 				TargetAttributes = {
 					A4C6E6AD23E29EA3003205F7 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					A4C6E6B623E29EA3003205F7 = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +267,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C6E6E223E29F70003205F7 /* Router.swift in Sources */,
+				A4C6E6DB23E29F5B003205F7 /* HTTPHeaders.swift in Sources */,
+				A4C6E6D923E29F5B003205F7 /* HTTPTask.swift in Sources */,
+				A4C6E6E623E2A046003205F7 /* MakeNetwork.swift in Sources */,
+				A4C6E6D223E29F3F003205F7 /* Errors.swift in Sources */,
+				A4C6E6E023E29F70003205F7 /* NetWorkRouter.swift in Sources */,
+				A4C6E6D823E29F5B003205F7 /* Parameter.swift in Sources */,
+				A4C6E6E423E29F83003205F7 /* EndPoint.swift in Sources */,
+				A4C6E6CC23E29F0A003205F7 /* Encoding.swift in Sources */,
+				A4C6E6E123E29F70003205F7 /* Logs.swift in Sources */,
+				A4C6E6CA23E29EE3003205F7 /* JSONEncoding.swift in Sources */,
+				A4C6E6CE23E29F1E003205F7 /* URLEncoding.swift in Sources */,
+				A4C6E6DA23E29F5B003205F7 /* HTTPMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +425,7 @@
 		A4C6E6C323E29EA3003205F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
@@ -356,6 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cheena.EezyNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +451,7 @@
 		A4C6E6C423E29EA3003205F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
@@ -388,6 +476,7 @@
 		A4C6E6C623E29EA3003205F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = EezyNetworkTests/Info.plist;
@@ -406,6 +495,7 @@
 		A4C6E6C723E29EA3003205F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = EezyNetworkTests/Info.plist;
