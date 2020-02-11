@@ -15,7 +15,7 @@ public class Networking {
     
  
     
-  private var task: URLSessionTask?
+  public var task: URLSessionTask?
     var baseURL : URL
   public var timeRequest : Double?
     public func makeNetworking<Model:Codable>(requestType:HTTPTask,path:String,module:Model.Type, onCompletion:@escaping(Model?,_ error:Result<String>)->())->() {
@@ -56,7 +56,7 @@ public class Networking {
                    self.task?.resume()
         }
     
-  fileprivate  func makeRequest(_ requestType:HTTPTask,path:String) throws -> URLRequest {
+  public  func makeRequest(_ requestType:HTTPTask,path:String) throws -> URLRequest {
     var request = URLRequest(url: baseURL.appendingPathComponent(path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeRequest ?? 10.0)
         
         do {
@@ -117,7 +117,7 @@ public enum RequestType {
 
 
 extension Networking {
-    fileprivate func configureParameters(bodyParameters: Parameters?,
+    public func configureParameters(bodyParameters: Parameters?,
                                          bodyEncoding: ParameterEncoding,
                                          urlParameters: Parameters?,
                                          method:HTTPMethods?,
@@ -130,14 +130,14 @@ extension Networking {
         }
     }
     
-    fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
+    public func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
     }
     
-    fileprivate func buildBodyForFormUrl(_ bodyParameters: Parameters?) -> Data? {
+    public func buildBodyForFormUrl(_ bodyParameters: Parameters?) -> Data? {
         
         guard let parameters = bodyParameters else { return nil }
         
@@ -163,7 +163,7 @@ extension Networking {
     }
     
     
-    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
+    public func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
         
         switch response.statusCode {
         case 100: return .success("Continue")
@@ -253,7 +253,7 @@ public enum Result<String>{
     case warning(String)
 }
 
-enum NetworkResponse:String {
+public enum NetworkResponse:String {
     case success
     case authenticationError = "You need to be authenticated first."
     case badRequest = "Bad request"

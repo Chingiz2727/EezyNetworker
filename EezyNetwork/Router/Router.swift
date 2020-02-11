@@ -9,9 +9,9 @@
 import Foundation
 class Router<EndPoint:EndPointType>:NetworkRouter {
     
-    private var task: URLSessionTask?
+    public var task: URLSessionTask?
     
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
+ public   func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
         do {
             let request = try self.buildRequest(from: route)
@@ -29,7 +29,7 @@ class Router<EndPoint:EndPointType>:NetworkRouter {
         self.task?.cancel()
     }
     
-    fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
+    public func buildRequest(from route: EndPoint) throws -> URLRequest {
         
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path!),
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
@@ -73,7 +73,7 @@ class Router<EndPoint:EndPointType>:NetworkRouter {
         }
     }
     
-    fileprivate func configureParameters(bodyParameters: Parameters?,
+    public func configureParameters(bodyParameters: Parameters?,
                                          bodyEncoding: ParameterEncoding,
                                          urlParameters: Parameters?,
                                          method:HTTPMethods?,
@@ -86,14 +86,14 @@ class Router<EndPoint:EndPointType>:NetworkRouter {
         }
     }
     
-    fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
+    public func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
     }
     
-    fileprivate func buildBodyForFormUrl(_ bodyParameters: Parameters?) -> Data? {
+    public func buildBodyForFormUrl(_ bodyParameters: Parameters?) -> Data? {
         
         guard let parameters = bodyParameters else { return nil }
         
