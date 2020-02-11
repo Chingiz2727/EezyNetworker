@@ -16,8 +16,9 @@ public class Networking {
  
     
   public var task: URLSessionTask?
-    var baseURL : URL
+   public var baseURL : URL
   public var timeRequest : Double?
+    
     public func makeNetworking<Model:Codable>(requestType:HTTPTask,path:String,module:Model.Type, onCompletion:@escaping(Model?,_ error:Result<String>)->())->() {
             let session = URLSession.shared
         
@@ -56,15 +57,13 @@ public class Networking {
                    self.task?.resume()
         }
     
-  public  func makeRequest(_ requestType:HTTPTask,path:String) throws -> URLRequest {
+  public func makeRequest(_ requestType:HTTPTask,path:String) throws -> URLRequest {
     var request = URLRequest(url: baseURL.appendingPathComponent(path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeRequest ?? 10.0)
         
         do {
         switch requestType {
         case .request:
-                
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                
         case .requestFormURL(let bodyParameter,let additionHeaders,let method):
             request.httpMethod = method.rawValue
 
@@ -266,4 +265,21 @@ public enum NetworkResponse:String {
 public enum Networkstate:String {
     case success
     case failure
+}
+
+public enum HTTPTask {
+    
+    case request
+    
+    case requestParameters(bodyParameters: Parameters?,
+        bodyEncoding: ParameterEncoding,
+        urlParameters: Parameters?)
+    
+    case requestParametersAndHeaders(bodyParameters: Parameters?,
+        bodyEncoding: ParameterEncoding,
+        urlParameters: Parameters?,
+        additionHeaders: HTTPHeaders?,method:HTTPMethods)
+    
+    case requestFormURL(bodyParameters: Parameters?, additionHeaders: HTTPHeaders?, method: HTTPMethods)
+    
 }
