@@ -17,16 +17,19 @@ public class Networking {
     
   private var task: URLSessionTask?
     var baseURL : URL
-    
-    public func makeNetworking<Model:Codable>(requestType:HTTPTask,path:String,module:Model.Type, onCompletion:@escaping(Model?,_ error:String?)->())->() {
+  public var timeRequest : Double?
+    public func makeNetworking<Model:Codable>(requestType:HTTPTask,path:String,module:Model.Type, onCompletion:@escaping(Model?,_ error:Result<String>)->())->() {
             let session = URLSession.shared
+        
                    do {
                     let request = try self.makeRequest(requestType, path: path)
                        NetworkLogger.log(request: request)
                     task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                        
                         guard let responseData = response as? HTTPURLResponse else {
-                            onCompletion(nil,error?.localizedDescription)
-                            return}
+                            return onCompletion(nil,Result.failure("Bad Gateway"))
+                            
+                        }
                         
                         let result = self.handleNetworkResponse(responseData)
                         
@@ -36,25 +39,25 @@ public class Networking {
                             guard let responseData = data else {return}
                                                   do {
                                                     let apiResponse = try JSONDecoder().decode(module, from: responseData)
-                                                      onCompletion(apiResponse,nil)
+                                                    onCompletion(apiResponse,Result.success(state))
                                                   }
-                                                  catch let error {
-                                                    onCompletion(nil,state)
+                                                  catch {
+                                                    onCompletion(nil,Result.failure(state))
                                                   }
                         case .failure(let error):
-                            onCompletion(nil,error)
+                            onCompletion(nil,Result.failure(error))
                         }
                     })
                    
                    }
                    catch {
-                    onCompletion(nil, error.localizedDescription)
+                    onCompletion(nil, Result.failure("Unknown Error"))
                    }
                    self.task?.resume()
         }
     
   fileprivate  func makeRequest(_ requestType:HTTPTask,path:String) throws -> URLRequest {
-        var request = URLRequest(url: baseURL.appendingPathComponent(path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+    var request = URLRequest(url: baseURL.appendingPathComponent(path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeRequest ?? 10.0)
         
         do {
         switch requestType {
@@ -154,10 +157,13 @@ extension Networking {
         self.task?.cancel()
     }
     
+    public enum state {
+        case error
+        case success
+    }
     
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
-        print(response.statusCode)
         
         switch response.statusCode {
         case 100: return .success("Continue")
@@ -241,7 +247,7 @@ extension Networking {
     }
 }
 
-enum Result<String>{
+public enum Result<String>{
     case success(String)
     case failure(String)
     case warning(String)
@@ -255,4 +261,9 @@ enum NetworkResponse:String {
     case failed = "Network request failed."
     case noData = "Response returned with no data to decode."
     case unableToDecode = "We could not decode the response."
+}
+
+public enum Networkstate:String {
+    case success
+    case failure
 }
