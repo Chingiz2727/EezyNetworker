@@ -12,8 +12,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.3"
   spec.ios.deployment_target = "9.3"
   spec.source   = { :git => "https://github.com/Chingiz2727/EezyNetworker.git", :tag => "1.0.0" }
-  spec.source_files  = "EezyNetworker"
-  # spec.public_header_files = "Classes/**/*.h"
+  spec.source_files  = "EezyNetwork"
 
 
 
